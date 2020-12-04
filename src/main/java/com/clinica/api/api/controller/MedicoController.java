@@ -6,6 +6,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,7 +24,11 @@ import com.clinica.api.domain.model.Medico;
 import com.clinica.api.domain.repository.IMedicoRepository;
 import com.clinica.api.domain.service.MedicoService;
 
+import io.swagger.annotations.Api;
+
 @RestController
+@CrossOrigin(origins = "*")
+@Api(tags = "Médicos")
 @RequestMapping(value = "/medicos")
 public class MedicoController {
 
